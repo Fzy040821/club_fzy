@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/l_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smart.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srlTextPulling="@string/string_text_pulling"
+                app:srlTextRefreshing="@string/string_text_refreshing"
+                app:srlTextRelease="@string/string_text_release"
+                app:srlTextSizeTitle="13sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <ImageView
+            android:id="@+id/iv_go_to_top"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:elevation="1dp"
+            android:background="@mipmap/icon_go_to_top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.95" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

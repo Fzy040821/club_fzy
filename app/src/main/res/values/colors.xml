@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="color_transparent_half">#20000000</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="black">#000</color>
+    <color name="white">#FFF</color>
+    <color name="gray">#666</color>
+    <color name="gray_light">#919191</color>
+    <color name="gray_dark">#333</color>
+
+    <color name="color_d8000f">#D8000F</color>
+    <color name="color_fff">#FFFFFF</color>
+    <color name="color_000">#000</color>
+    <color name="color_101010">#101010</color>
+    <color name="color_f8f8f8">#f8f8f8</color>
+    <color name="color_494948">#494948</color>
+    <color name="color_919191">#919191</color>
+    <color name="color_f3f3f3">#F3F3F3</color>
+    <color name="color_7c7c79">#7C7C79</color>
+    <color name="color_c1c1c1">#C1C1C1</color>
+    <color name="color_f4f5f7">#F4F5F7</color>
+    <color name="color_f0f0f0">#F0F0F0</color>
+    <color name="color_f9f9f9">#F9F9F9</color>
+    <color name="color_cccccc">#CCCCCC</color>
+    <color name="color_f5f5f5">#F5F5F5</color>
+    <color name="color_0dd8000f">#0DD8000F</color>
+    <color name="color_f6f6f6">#F6F6F6</color>
+    <color name="color_308fff">#308FFF</color>
+    <color name="color_f48f97">#F48F97</color>
+    <color name="color_e6bfbc">#E6BFBC</color>
+    <color name="color_c73830">#C73830</color>
+    <color name="color_12aa00">#12AA00</color>
+    <color name="color_ef1717">#EF1717</color>
+    <color name="color_ececec">#ECECEC</color>
+    <color name="color_f1f1f1">#F1F1F1</color>
+    <color name="color_e7e7e7">#E7E7E7</color>
+    <color name="color_d6d6d6">#D6D6D6</color>
+    <color name="color_979797">#979797</color>
+    <color name="color_1a000000">#1A000000</color>
+    <color name="color_4d000000">#4DFFFFFF</color>
+    <color name="color_3298ff">#3298FF</color>
+    <color name="color_ff6732">#FF6732</color>
+    <color name="color_f7d9d6">#F7D9D6</color>
+    <color name="color_dddddd">#DDDDDD</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+
+    <color name="v3_bg_color">#17162E</color>
+    <color name="v3_bg_color_dark">#0A0A13</color>
+    <color name="v3_bg_color_light">#202138</color>
+    <color name="topic">#FF308FFF</color>
+    <color name="color_525252">#525252</color>
+
+    <color name="color_examine_red">#D8000F</color>
+    <color name="color_star_yellow">#FFAC00</color>
+    <color name="color_yellow_dark">#E19800</color>
+    <color name="color_40b223">#40B223</color>
+    <color name="color_2f62c7">#2F62C7</color>
+    <color name="color_7f7f80">#FF7F7F80</color>
+    <color name="color_992a2a2b">#992A2A2B</color>
+    <color name="color_662a2a2b">#662A2A2B</color>
+    <color name="color_2a2a2b">#2A2A2B</color>
+    <color name="color_7f7f7f">#7F7F7F</color>
+    <color name="color_aaaaa9">#AAAAA9</color>
+    <color name="color_555554">#555554</color>
+
+
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_e6605c">#ffe6605c</color>
+    <color name="color_e0ecff">#ffe0ecff</color>
+    <color name="color_b9d3ff">#ffb9d3ff</color>
+    <color name="color_dedede">#ffdedede</color>
+    <color name="color_a6adb6">#a6adb6</color>
+    <color name="color_eff1f4">#eff1f4</color>
+    <color name="color_fff4f4f4">#fff4f4f4</color>
+    <color name="color_ededef">#ededef</color>
+    <color name="color_dbdde4">#dbdde4</color>
+    <color name="color_337eff">#337eff</color>
+    <color name="color_b3b7bc">#b3b7bc</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_f2f4f5">#f2f4f5</color>
+
+    <color name="color_58be6b">#58BE6B</color>
+    <color name="color_10_58be6b">#1958BE6B</color>
+    <color name="color_f7f7f7">#f7f7f7</color>
+    <color name="color_ededed">#EDEDED</color>
+
+</resources>

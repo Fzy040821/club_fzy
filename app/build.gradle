@@ -1,0 +1,118 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.bw.kf.club_fengzy'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.bw.kf.club_fengzy"
+        minSdk 28
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'H5_HOST', '"http://moto-cloud.qiyumotor.com/"'
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : "com.bw.kf.club_fengzy",
+                JPUSH_APPKEY : "58dc9908eada84d6e7255aeb", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+        kapt{
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+        buildConfig = true
+    }
+    flavorDimensions "environment"
+
+    productFlavors{
+        dev{
+            dimension "environment" // 指定风味所属的维度
+            //H5地址
+            buildConfigField 'String', 'H5_HOST', '"http://moto-cloud.qiyumotor.com/"'
+        }
+        product{
+            dimension "environment" // 指定风味所属的维度
+            //H5地址
+            buildConfigField 'String', 'H5_HOST', '"http://moto-cloud.qiyumotor.com/"'
+        }
+
+    }
+
+     kapt {
+        correctErrorTypes true
+    }
+
+}
+
+dependencies {
+    implementation "androidx.paging:paging-runtime:3.1.1"
+    //下拉刷新
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation("com.alibaba:arouter-api:1.5.2")
+    kapt("com.alibaba:arouter-compiler:1.5.2")
+    implementation("com.google.dagger:hilt-android:2.45")
+    kapt("com.google.dagger:hilt-android-compiler:2.45")
+    implementation libs.play.services.basement
+    // 基础依赖包，必须要依赖
+    implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+// kotlin扩展（可选）
+    implementation 'com.geyifeng.immersionbar:immersionbar-ktx:3.2.2'
+    implementation 'androidx.activity:activity-ktx:1.5.1'
+    implementation 'androidx.fragment:fragment-ktx:1.5.1'
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    implementation 'cn.jiguang.sdk:jpush:5.4.0'  // 此处以JPush 4.0.0 版本为例
+
+    implementation libs.androidx.legacy.support.v4
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation 'com.tencent:mmkv:2.0.1'
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}

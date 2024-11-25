@@ -1,0 +1,363 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Club2203_class" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Club2203_class" parent="Base.Theme.Club2203_class">
+        <item name="android:windowBackground">@color/color_fff</item>
+        <item name="windowLightBackground">@color/color_fff</item>
+        <item name="onWindowBackground">@color/color_000</item>
+        <item name="windowDarkBackground">@color/color_f4f5f7</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorTheme">@color/color_d8000f</item>
+        <item name="colorYellow">@color/color_star_yellow</item>
+        <item name="colorOnColorTheme">@color/color_fff</item>
+        <item name="colorDisable">@color/color_f48f97</item>
+        <item name="colorPaleText">@color/color_cccccc</item>
+        <item name="colorLightText">@color/color_919191</item>
+        <item name="colorText">@color/color_494948</item>
+        <item name="colorDarkText">@color/color_101010</item>
+        <item name="colorBlackText">@color/color_000</item>
+        <item name="colorDivider">@color/color_c1c1c1</item>
+        <item name="colorLightDivider">@color/color_f9f9f9</item>
+        <item name="colorPaleDivider">@color/color_f0f0f0</item>
+        <item name="colorWhiteText">@color/color_fff</item>
+        <item name="colorBgEditText">@color/color_f6f6f6</item>
+        <item name="colorBgSearchHistory">@color/color_f0f0f0</item>
+        <item name="colorBgPopupWindow">@color/color_f0f0f0</item>
+        <item name="colorBgTabUnselected">@color/color_f5f5f5</item>
+        <item name="colorBgTabSelected">@color/color_0dd8000f</item>
+        <item name="coloMask">@color/color_f6f6f6</item>
+        <item name="colorTopic">@color/color_308fff</item>
+        <item name="colorExamine">@color/color_examine_red</item>
+        <item name="colorSplitLine">@color/color_f0f0f0</item>
+
+
+    </style>
+
+    <style name="DialogFullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+
+    <style name="BottomSheetDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowAnimationStyle">@style/BottomToTopAnim</item>
+    </style>
+
+    <style name="MessageNoticeDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <style name="BottomToTopAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_out</item>
+    </style>
+
+    <style name="ExpandAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/scale_in</item>
+        <item name="android:windowExitAnimation">@anim/scale_out</item>
+    </style>
+
+    <style name="FadeAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/fab_in</item>
+        <item name="android:windowExitAnimation">@anim/fab_out</item>
+    </style>
+
+
+    <style name="ActivityFullScreen" parent="Theme.Club2203_class">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="ToolbarDarkIconStyle" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+
+    <style name="ToolbarLightIconStyle" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="colorControlNormal">@color/color_fff</item>
+    </style>
+
+    <style name="BottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="View" parent="disableSplitMotion">
+
+    </style>
+
+    <style name="View.Button">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="View.Button.Stroke">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">32dp</item>
+    </style>
+
+    <style name="View.Button.Stroke.Red">
+        <item name="android:background">@drawable/bg_circle_trans_with_red_line</item>
+        <item name="android:textColor">?colorTheme</item>
+    </style>
+
+    <style name="View.Button.Stroke.Yellow">
+        <item name="android:background">@drawable/bg_circle_trans_with_yellow_line</item>
+        <item name="android:textColor">?colorYellow</item>
+    </style>
+
+    <style name="View.Button.Stroke.Gray">
+        <item name="android:background">@drawable/bg_circle_trans_with_gray_line</item>
+        <item name="android:textColor">?colorDarkText</item>
+    </style>
+
+    <style name="TextView" parent="disableSplitMotion">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextView.8">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="TextView.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="TextView.11">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="TextView.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextView.13">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextView.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextView.15">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextView.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.17">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="TextView.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextView.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextView.24">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextView.Tab">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextView.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.SingleLine">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.MaxLine2">
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.MaxLine3">
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="View.InputBlock">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="View.Wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="View.Match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="View.Match.Width">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="View.Match.Height">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="View.0dp">
+
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="AMapNaviStyle" parent="Theme.Club2203_class">
+
+    </style>
+
+
+    <!-- 禁用多点触控 -->
+    <style name="disableSplitMotion">
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <!-- 按钮通用样式 -->
+    <style name="CustomButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_circle_red</item>
+    </style>
+    <style name="CustomButtonRound">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_round_new_theme_4dp</item>
+    </style>
+
+    <style name="baseRecyclerView" parent="disableSplitMotion">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <!-- RecyclerView通用样式 -->
+    <style name="sRecyclerView" parent="baseRecyclerView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="mRecyclerView" parent="baseRecyclerView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!--背景模糊的Dialog样式-->
+    <style name="CustomDialogWithDim" parent="android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="ActivityDialogStyle">
+        <!--去掉action bar和标题栏-->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--背景透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--dialog圆角-->
+        <item name="android:windowBackground">@drawable/jverify_dialog_bg</item>
+        <item name="android:windowAnimationStyle">@style/ActivityDialogAnimStyle</item>
+    </style>
+
+
+    <style name="ActivityDialogAnimStyle" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/bottom_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/fab_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/bottom_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fab_out</item>
+    </style>
+
+    <style name="MallOrderTabLayoutTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--PictureSelector 取消透明背景-->
+    <style name="Picture.Theme.Translucent" parent="Base.Theme.Club2203_class">
+<!--        <item name="android:windowBackground">@color/ps_color_transparent</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="crowd_item_progressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/crowd_progressbar_unselect</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:maxHeight">10dp</item>
+    </style>
+</resources>

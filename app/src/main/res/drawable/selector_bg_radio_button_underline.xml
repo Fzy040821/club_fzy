@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true">
+        <layer-list>
+
+            <item android:left="5dp" android:right="5dp" android:top="33dp">
+
+                <shape android:shape="rectangle">
+                    <gradient android:endColor="#78FFD7D7" android:startColor="#FFFF2020" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item android:drawable="@color/color_transparent"></item>
+
+</selector>

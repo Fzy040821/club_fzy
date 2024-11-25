@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义颜色属性-->
+
+    <attr name="windowLightBackground" format="reference|color" />
+    <attr name="windowDarkBackground" format="reference|color" />
+    <attr name="onWindowBackground" format="reference|color" />
+    <attr name="colorTheme" format="reference|color" />
+    <attr name="colorYellow" format="reference|color" />
+    <attr name="colorOnColorTheme" format="reference|color" />
+
+    <attr name="colorWhiteText" format="color|reference" />
+    <attr name="colorPaleText" format="color|reference" />
+    <attr name="colorLightText" format="reference|color" />
+    <attr name="colorText" format="reference|color" />
+    <attr name="colorDarkText" format="reference|color" />
+    <attr name="colorBlackText" format="reference|color" />
+
+
+    <attr name="colorDisable" format="reference|color" />
+    <attr name="colorNormal" format="reference|color" />
+    <attr name="colorDivider" format="reference|color" />
+    <attr name="colorLightDivider" format="reference|color" />
+    <attr name="colorPaleDivider" format="reference|color" />
+    <attr name="colorBgEditText" format="reference|color" />
+    <attr name="colorBgSearchHistory" format="reference|color" />
+    <attr name="colorBgPopupWindow" format="reference|color" />
+    <attr name="colorBgTabSelected" format="reference|color" />
+    <attr name="colorBgTabUnselected" format="reference|color" />
+    <attr name="colorTopic" format="reference|color" />
+    <attr name="colorSplitLine" format="reference|color" />
+
+    <attr name="coloMask" format="reference|color" />
+    <attr name="colorExamine" format="reference|color" />
+
+</resources>

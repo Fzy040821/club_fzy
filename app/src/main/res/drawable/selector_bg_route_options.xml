@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_round_white_with_theme_line_18dp" android:state_checked="true" />
+    <item android:drawable="@drawable/bg_round_white_with_theme_line_18dp" android:state_selected="true" />
+    <item android:drawable="@drawable/bg_round_stroke_gray_aaaaa9_18dp" android:state_enabled="false" />
+    <item android:drawable="@drawable/bg_round_stroke_gray_aaaaa9_18dp" />
+</selector>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:background="?colorAccent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9.5dp"
+            android:background="@drawable/shape_bg_stroke_round_4dp"
+            android:minHeight="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.bw.kf.club_fengzy.widget.MaxRecyclerView
+                android:id="@+id/rvPopupMenu"
+                style="@style/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:customMaxHeight="210dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <com.fenghongzhang.club2203_class.widget.SharpView-->
+<!--            android:id="@+id/sv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:sjv_color="?windowDarkBackground" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 作者 专用,其他地方慎用 -->
+    <corners android:radius="1dp" />
+
+    <solid android:color="#2A2A29" />
+
+</shape>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VerifyCodeItemView">
+        <attr name="indicatorFocusedColor" format="color|reference" />
+        <attr name="indicatorColor" format="color|reference" />
+        <attr name="numberSize" format="dimension" />
+        <attr name="cursorColor" format="color|reference" />
+    </declare-styleable>
+    <declare-styleable name="SanJiaoView">
+        <attr name="sjv_resolutionWidth" format="dimension" />
+        <attr name="sjv_resolutionHeight" format="dimension" />
+        <attr name="sjv_color" format="color" />
+        <attr name="fill_color" format="color" />
+        <attr name="fill" format="boolean" />
+        <attr name="sjv_direction">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="right" value="2" />
+            <enum name="left" value="3" />
+        </attr>
+    </declare-styleable>
+    <item name="imageTag" type="id" />
+
+
+    <!--输入框外边框宽度-->
+    <dimen name="pwk_input_view_border_width">1.5dp</dimen>
+    <!--背景缩进，必须与pwk_input_view_border_width保持一致，并且为负值-->
+    <dimen name="pwk_input_view_border_width_inset">-1dp</dimen>
+    <!--输入框分割线的宽度，在混合组件中使用-->
+    <dimen name="pwk_input_view_divider_split_line">@dimen/pwk_input_view_border_width</dimen>
+    <!--输入框分割空间的距离，在分离组件样式中使用-->
+    <dimen name="pwk_input_view_divider_split_space">5dp</dimen>
+    <!--输入框选中状态的边框宽度，在混合组件中使用-->
+    <dimen name="pwk_input_item_highlight_border_width">1.1</dimen>
+    <!--输入框圆角-->
+    <dimen name="pwk_input_item_radius">4dp</dimen>
+    <!--输入框字体大小-->
+    <dimen name="pwk_input_item_text_size">18sp</dimen>
+
+    <declare-styleable name="SecuritySettingsTab">
+        <attr name="icon" format="reference"/>
+        <attr name="tabName" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="AlignTextView">
+        <attr name="alignOnlyOneLine" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="radar_view">
+        <attr name="radar_view_space" format="integer" /><!--两个环之间的间距-->
+        <attr name="radar_view_color" format="color" /><!--圆环的颜色-->
+        <attr name="radar_view_speed" format="integer" /><!--扩散的速度-->
+        <attr name="radar_view_is_alpha" format="boolean" /><!--扩散是否需要渐变-->
+        <attr name="radar_view_center_image" format="reference" /><!--中心图片-->
+        <attr name="radar_radius" format="dimension" /><!--扩散距离-->
+    </declare-styleable>
+
+    <declare-styleable name="MaxRecyclerView">
+        <attr name="customMaxHeight" format="dimension"/>
+    </declare-styleable>
+
+</resources>
