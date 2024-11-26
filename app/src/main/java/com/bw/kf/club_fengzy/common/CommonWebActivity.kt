@@ -29,6 +29,28 @@ class CommonWebActivity: BaseToolbarActivity<BlankViewModel, ActivityCommonWebBi
         private var exitBack = false
         private var fullscreen = false
 
+        /** 通用跳转 */
+        fun jump(
+            title: String = "",
+            url: String = "",
+            richText: String = "",
+            useWebTitle: Boolean = false,
+            jump4pay: Boolean = false,
+            exitBack: Boolean = false,
+            fullScreen: Boolean = false
+        ) {
+            JLogUtil.d("CommonWebActivity called with url = $url")
+            this.mTitle = title
+            this.url = url
+            this.richText = richText
+            this.userWebTitle = useWebTitle
+            this.jump4pay = jump4pay
+            this.exitBack = exitBack
+            this.fullscreen = fullScreen
+            ARouterUtil.jump(Router.Ui.CommonWebActivity)
+        }
+
+
         /**
          * 用户协议
          */
@@ -65,5 +87,7 @@ class CommonWebActivity: BaseToolbarActivity<BlankViewModel, ActivityCommonWebBi
             mBinding.customToolbar.toolbarRightIcon.visibility = View.GONE
         }
     }
+
+
 
 }

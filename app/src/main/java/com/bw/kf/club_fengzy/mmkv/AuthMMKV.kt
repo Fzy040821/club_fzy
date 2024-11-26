@@ -8,5 +8,7 @@ object AuthMMKV : MMKVOwner{
 
     //token
     var accessToken by MMKVProperty("")
+    fun hasLogin() = accessToken.isNotEmpty()
+
 
 }

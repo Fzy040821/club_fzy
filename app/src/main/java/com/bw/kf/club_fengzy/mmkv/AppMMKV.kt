@@ -12,6 +12,8 @@ object AppMMKV: MMKVOwner {
     //app引导页
     var appGuide by MMKVProperty(true)
     var lastVersionCode by MMKVProperty(0L)
+    var lastLaunchTime by MMKVProperty(0L)
+
 
 
 }

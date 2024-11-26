@@ -1,9 +1,11 @@
 package com.bw.kf.club_fengzy.ui.main
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import com.bw.kf.club_fengzy.base.BaseViewModel
 import com.bw.kf.club_fengzy.model.MotoCircleNavigationEnum
 import com.bw.kf.club_fengzy.model.MotoCircleNavigationItem
+import com.bw.kf.club_fengzy.model.UpdateModel
 import com.bw.kf.club_fengzy.state.Default
 import com.bw.kf.club_fengzy.state.RequestEvent
 import com.bw.kf.club_fengzy.state.Success
@@ -18,6 +20,20 @@ class MainViewModel @Inject constructor(private val mRepository: MainRepository)
     private val _navigationState = MutableStateFlow<RequestEvent>(Default)
     val navigationState
         get() = _navigationState.asStateFlow()
+
+    //版本更新
+    val updateLiveData by lazy {
+        MutableLiveData<UpdateModel>()
+    }
+    fun updateApp() {
+        execute(action = mRepository.updateApp(),
+            onFinished = {
+                if (it.data != null)
+                    updateLiveData.postValue(it.data)
+            }
+        )
+    }
+
 
     //TODO 导航栏 依赖注入
     fun getFixedNavigationItem(){

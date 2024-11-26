@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.bw.kf.club_fengzy.BuildConfig" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?windowDarkBackground"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/custom_toolbar"
+            layout="@layout/custom_toolbar" />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="40dp"
+            android:src="@mipmap/icon_default_avatar" />
+
+        <TextView
+            style="@style/TextView.Bold"
+            android:layout_marginTop="16dp"
+            android:text="@string/app_name"
+            android:textColor="?colorDarkText"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/TextView"
+            android:layout_marginTop="16dp"
+            android:text="@{BuildConfig.VERSION_NAME}"
+            android:textColor="?colorLightText"
+            tools:text="V.1.0.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCommon"
+            style="@style/mRecyclerView"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </LinearLayout>
+</layout>

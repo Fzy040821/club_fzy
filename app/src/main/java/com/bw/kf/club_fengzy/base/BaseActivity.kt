@@ -7,9 +7,15 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.Lifecycle
 import com.alibaba.android.arouter.launcher.ARouter
 import com.bw.kf.club_fengzy.R
+import com.bw.kf.club_fengzy.state.Failed
+import com.bw.kf.club_fengzy.state.Loading
+import com.bw.kf.club_fengzy.state.RequestEvent
+import com.bw.kf.club_fengzy.state.Success
 import com.gyf.immersionbar.ImmersionBar
+import kotlinx.coroutines.flow.SharedFlow
 
 abstract class BaseActivity<VM: BaseViewModel , VDB: ViewDataBinding>: AppCompatActivity() {
 
@@ -55,7 +61,7 @@ abstract class BaseActivity<VM: BaseViewModel , VDB: ViewDataBinding>: AppCompat
         }
     }
 
-    private fun setLoadingViewVisible(show: Boolean , msg: String = "") {
+    fun setLoadingViewVisible(show: Boolean , msg: String = "") {
         mLoadingView?.let {
             val textView = it.findViewById<TextView>(R.id.tv_text)
             if(show && msg.isNotEmpty()){
@@ -64,5 +70,31 @@ abstract class BaseActivity<VM: BaseViewModel , VDB: ViewDataBinding>: AppCompat
             if(show) it.visibility = View.VISIBLE else it.visibility = View.GONE
         }
     }
+
+    open fun addCommonStateListener(stateListener: SharedFlow<RequestEvent>) {
+        stateListener.observeWithLifecycle(this, Lifecycle.State.STARTED) {
+            when (it) {
+                is Success -> {
+                    setLoadingViewVisible(false)
+                }
+                is Loading -> {
+                    setLoadingViewVisible(true)
+                }
+                is Failed -> {
+                    // 商品已下架 不Toast
+                    if (it.message != "商品已下架") {
+//                        ToastUtils.showShort(this, it.message)
+                    }
+                    setLoadingViewVisible(false)
+                    onLoadFailed(it.message)
+                }
+                else -> {}
+            }
+        }
+    }
+
+    open fun onLoadFailed(msg: String) {}
+
+
 
 }

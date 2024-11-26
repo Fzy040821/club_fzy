@@ -14,7 +14,7 @@ android {
         minSdk 28
         targetSdk 34
         versionCode 1
-        versionName "1.0"
+        versionName "2.0.0.dev"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'H5_HOST', '"http://moto-cloud.qiyumotor.com/"'
@@ -78,6 +78,8 @@ android {
 }
 
 dependencies {
+    //版本更新
+    implementation 'io.github.azhon:appupdate:4.2.9'
     implementation "androidx.paging:paging-runtime:3.1.1"
     //下拉刷新
     implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'

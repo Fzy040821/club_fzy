@@ -1,8 +1,8 @@
 package com.bw.kf.club_fengzy.base
 
-import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -80,6 +80,17 @@ inline fun <reified T> StateFlow<T>.observeWithLifecycle(
     }
 }
 
+//收集流
+inline fun <reified T> Flow<T>.observeWithLifecycle(
+    lifecycleOwner: LifecycleOwner,
+    minState: Lifecycle.State = Lifecycle.State.STARTED,
+    noinline action: suspend (T) -> Unit
+): Job = lifecycleOwner.lifecycleScope.launch {
+    flowWithLifecycle(lifecycleOwner.lifecycle, minState).collectLatest {
+        action.invoke(it)
+    }
+}
+
 inline fun <reified T> Flow<T>.observeWithLifecycle(
     fragment: Fragment,
     minState: Lifecycle.State = Lifecycle.State.STARTED,
@@ -87,5 +98,17 @@ inline fun <reified T> Flow<T>.observeWithLifecycle(
 ): Job = fragment.viewLifecycleOwner.lifecycleScope.launch {
     flowWithLifecycle(fragment.viewLifecycleOwner.lifecycle, minState).collectLatest {
         action.invoke(it)
+    }
+}
+
+inline fun <reified T> StateFlow<T>.observeWithLifecycle(
+    lifecycleOwner: LifecycleOwner,
+    minState: Lifecycle.State = Lifecycle.State.STARTED,
+    noinline action: suspend (T) -> Unit
+): Job = lifecycleOwner.lifecycleScope.launch {
+    lifecycleOwner.lifecycle.whenStateAtLeast(minState) {
+        collectLatest {
+            action.invoke(it)
+        }
     }
 }

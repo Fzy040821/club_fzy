@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.bw.kf.club_fengzy.model.UpdateModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:background="#EEEEEE">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/disableSplitMotion"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_bg_round_14dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TextView.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="最新版本"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvVersion"
+                style="@style/TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{item.requiredVersionName()}"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:text="最新版本：V2.0.0" />
+
+            <TextView
+                android:id="@+id/tvPublishTime"
+                style="@style/TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{item.requiredPublishTime()}"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvVersion"
+                tools:text="发布时间：2022.06.25 14:00" />
+
+            <View
+                android:id="@+id/hLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="?colorPaleDivider"
+                app:layout_constraintTop_toBottomOf="@id/tvPublishTime" />
+
+            <View
+                android:id="@+id/vLine"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="?colorPaleDivider"
+                android:visibility="@{item.forceUpGrade==2?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@id/btnCancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnCancel" />
+
+            <TextView
+                android:id="@+id/btnConfirmSingle"
+                style="@style/TextView.17"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_round_white_ripple_bottom"
+                android:gravity="center"
+                android:text="确认"
+                android:textColor="?colorTheme"
+                android:visibility="@{item.forceUpGrade==1?View.VISIBLE:View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hLine"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/btnCancel"
+                style="@style/TextView.17"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_round_white_ripple_bottom_left"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/black"
+                android:visibility="@{item.forceUpGrade==2?View.VISIBLE:View.GONE}"
+                app:layout_constraintEnd_toStartOf="@id/vLine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hLine" />
+
+            <TextView
+                android:id="@+id/btnConfirm"
+                style="@style/TextView.17"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_round_white_ripple_bottom_right"
+                android:gravity="center"
+                android:text="确认"
+                android:textColor="?colorTheme"
+                android:visibility="@{item.forceUpGrade==2?View.VISIBLE:View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vLine"
+                app:layout_constraintTop_toBottomOf="@id/hLine" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

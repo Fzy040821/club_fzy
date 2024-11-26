@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/l_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srlTextPulling="@string/string_text_pulling"
+            app:srlTextRefreshing="@string/string_text_refreshing"
+            app:srlTextRelease="@string/string_text_release"
+            app:srlTextSizeTitle="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?windowLightBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="183dp"
+                android:layout_height="135dp"
+                android:layout_marginTop="65dp"
+                android:src="@mipmap/icon_api_failed" />
+
+            <TextView
+                android:id="@+id/tv_errorView_hint"
+                style="@style/TextView.16"
+                android:layout_marginTop="41dp"
+                android:layout_marginBottom="41dp"
+                android:text="网络开小差，请稍后重试"
+                android:textColor="?colorLightText" />
+
+            <Button
+                android:id="@+id/btn_retry"
+                style="@style/TextView.14"
+                android:layout_width="122dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="65dp"
+                android:background="@drawable/bg_circle_trans_with_gray_line"
+                android:gravity="center"
+                android:text="重试"
+                android:textColor="?colorDarkText" />
+        </LinearLayout>
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/l"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?windowLightBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="183dp"
+            android:layout_height="132dp"
+            android:layout_marginTop="34dp"
+            android:src="@mipmap/icon_examining_none" />
+
+        <TextView
+            android:id="@+id/tv_errorView_hint"
+            style="@style/TextView.16"
+            android:layout_marginTop="42dp"
+            android:text="您还没有登录，请登录后查看关注列表"
+            android:textColor="?colorDarkText" />
+
+<!--        <com.jczy.cyclone.widget.ScalableButton-->
+<!--            android:id="@+id/btnGoLogin"-->
+<!--            style="@style/CustomButtonRound"-->
+<!--            android:layout_width="154dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:text="去登录"-->
+<!--            android:textStyle="bold" />-->
+    </LinearLayout>
+
+</FrameLayout>

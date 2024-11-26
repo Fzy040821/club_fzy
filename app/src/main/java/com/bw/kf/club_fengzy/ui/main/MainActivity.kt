@@ -6,11 +6,14 @@ import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.azhon.appupdate.manager.DownloadManager
 import com.bw.kf.club_fengzy.BuildConfig
 import com.bw.kf.club_fengzy.R
 import com.bw.kf.club_fengzy.Router
 import com.bw.kf.club_fengzy.base.BaseActivity
 import com.bw.kf.club_fengzy.databinding.ActivityMainBinding
+import com.bw.kf.club_fengzy.dialog.AppUpdateDialog
+import com.bw.kf.club_fengzy.mmkv.AppMMKV
 import com.bw.kf.club_fengzy.ui.main.club.ClubHomeFragmentV2
 import com.bw.kf.club_fengzy.ui.main.club.MotorClubNotJoinedFragment
 import com.bw.kf.club_fengzy.ui.main.mall.MallHomeFragment
@@ -63,9 +66,72 @@ class MainActivity : BaseActivity<MainViewModel , ActivityMainBinding>() {
     }
 
     override fun initListener() {
+//        val version = "2.0.0.dev"
+        //版本更新
+        mViewModel.updateLiveData.observe(this){ updateModel->
+            if(updateModel != null){
+                if(updateModel.latestVersion.isEmpty() ||
+                    updateModel.downloadUrl.isNullOrEmpty() ||
+                    updateModel.latestVersion == BuildConfig.VERSION_NAME){
+                    return@observe
+                }
+            }
+            val new = updateModel.latestVersion.split(".")
+            if(new.isEmpty() || new.size != 3) return@observe
+            val current = BuildConfig.VERSION_NAME.split(".")
+            val needUpdate = isNeedUpdate(new, current)
+
+            if(!needUpdate) return@observe
+
+            if(updateModel.forceUpGrade != 2 || System.currentTimeMillis() - AppMMKV.lastVersionCode > 10* 60 *1000L){
+                AppUpdateDialog(
+                    title = String.format("最新版本%s升级说明" , updateModel.latestVersion),
+                    message = updateModel.message,
+                    updateModel.forceUpGrade != 2
+                ){
+                    forceUpdate(updateModel!!.downloadUrl!! , updateModel.latestVersion)
+                }.show(supportFragmentManager)
+                AppMMKV.lastLaunchTime = System.currentTimeMillis()
+            }
+        }
+    }
+    private fun forceUpdate(url: String, versionName: String) {
+        val manager = DownloadManager.Builder(this).run {
+            apkUrl(url)
+            apkName("app_new_version.apk")
+            enableLog(false)
+            smallIcon(R.mipmap.app_icon)
+            showBgdToast(true)
+            showNotification(true)
+            apkVersionName(versionName)
+            build()
+        }
+        manager.download()
     }
 
+
+    private fun isNeedUpdate(new: List<String>, current: List<String>): Boolean {
+        if (new[0].toInt() > current[0].toInt()) {
+            return true
+        } else if (new[0].toInt() < current[0].toInt()) {
+            return false
+        }
+        if (new[1].toInt() > current[1].toInt()) {
+            return true
+        } else if (new[1].toInt() < current[1].toInt()) {
+            return false
+        }
+        if (new[2].toInt() > current[2].toInt()) {
+            return true
+        } else if (new[2].toInt() < current[2].toInt()) {
+            return false
+        }
+        return false
+    }
+
+
     override fun initData() {
+        mViewModel.updateApp()
     }
 
     override fun initView() {

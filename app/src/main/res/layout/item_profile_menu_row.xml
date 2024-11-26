@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.bw.kf.club_fengzy.profile.ProfileMenuItem" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topPadding"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:background="?windowDarkBackground"
+            android:visibility="@{item.first?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/containerBg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_white_ripple"
+            app:layout_constraintTop_toBottomOf="@id/topPadding" />
+
+        <TextView
+            android:id="@+id/rowName"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:text="@{item.name}"
+            android:textColor="?colorDarkText"
+            app:layout_constraintBottom_toBottomOf="@id/containerBg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/containerBg"
+            tools:text="菜单名称" />
+
+        <View
+            android:id="@+id/rightBlock"
+            android:layout_width="6dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/rowName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rowName" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_circle_red"
+            android:visibility="@{item.hasNew?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/ivMore"
+            app:layout_constraintEnd_toStartOf="@id/ivMore"
+            app:layout_constraintTop_toTopOf="@id/ivMore" />
+
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:src="@mipmap/icon_arrow_grey"
+            app:layout_constraintBottom_toBottomOf="@id/containerBg"
+            app:layout_constraintEnd_toStartOf="@id/rightBlock"
+            app:layout_constraintTop_toTopOf="@id/containerBg" />
+
+        <TextView
+            android:id="@+id/tvHint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="@{item.subName}"
+            android:textColor="?colorLightText"
+            app:layout_constraintBottom_toBottomOf="@id/ivMore"
+            app:layout_constraintEnd_toStartOf="@id/ivMore"
+            app:layout_constraintStart_toEndOf="@id/rowName"
+            app:layout_constraintTop_toTopOf="@id/ivMore"
+            tools:text="value" />
+
+        <View
+            android:id="@+id/splitLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?colorPaleDivider"
+            android:visibility="@{item.splitLineVis()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/rowName"
+            app:layout_constraintTop_toBottomOf="@id/containerBg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

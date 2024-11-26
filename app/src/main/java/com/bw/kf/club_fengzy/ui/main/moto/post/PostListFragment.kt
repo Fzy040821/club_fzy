@@ -2,13 +2,10 @@ package com.bw.kf.club_fengzy.ui.main.moto.post
 
 import android.graphics.Rect
 import androidx.fragment.app.viewModels
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bw.kf.club_fengzy.R
